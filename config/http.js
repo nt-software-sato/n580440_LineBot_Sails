@@ -29,7 +29,7 @@ module.exports.http = {
     *                                                                          *
     ***************************************************************************/
 
-    // order: [
+    order: [
     //   'cookieParser',
     //   'session',
     //   'bodyParser',
@@ -38,7 +38,8 @@ module.exports.http = {
     //   'router',
     //   'www',
     //   'favicon',
-    // ],
+      'CacheControl'
+    ],
 
 
     /***************************************************************************
@@ -54,6 +55,17 @@ module.exports.http = {
     //   var middlewareFn = skipper({ strict: true });
     //   return middlewareFn;
     // })(),
+    CacheControl: (function (){
+      console.log('Initializing `foobar` (HTTP middleware)...');
+      return function (req,res,next) {
+        // sails.log.info("Applying disable cache policy");
+        res.header('Cache-Control', 'max-age=0, must-revalidate');
+        res.header('Expires', '-1');
+        res.header('Pragma', 'no-cache');
+        //next();
+        return next();
+      };
+    })(),
 
   },
 
