@@ -21,7 +21,8 @@ module.exports.routes = {
 
 
   //'/': { view: 'pages/homepage' },
-  'GET /venderbot/:companyid': 'VenderbotController.link'
+  'GET /venderbot/:companyid': 'VenderbotController.link',
+  'POST /venderbot/:companyid': 'VenderbotController.link'
 
   /***************************************************************************
   *                                                                          *

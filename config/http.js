@@ -30,14 +30,14 @@ module.exports.http = {
     ***************************************************************************/
 
     order: [
-    //   'cookieParser',
-    //   'session',
-    //   'bodyParser',
-    //   'compress',
-    //   'poweredBy',
-    //   'router',
-    //   'www',
-    //   'favicon',
+      'cookieParser',
+      'session',
+      'bodyParser',
+      'compress',
+      'poweredBy',
+      'router',
+      'www',
+      'favicon',
       'CacheControl'
     ],
 
